@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:  # bisa dijalankan manual dari GitHub Actions tab
+  workflow_dispatch:  # bisa dijalankan manual dari tab Actions di GitHub
 
 jobs:
   build-train:
@@ -17,16 +17,20 @@ jobs:
       - name: Set up Conda environment
         uses: conda-incubator/setup-miniconda@v3
         with:
-          activate-environment: mlflow-env
+          activate-environment: telco-churn-env    # harus sama dengan nama di conda.yaml
           environment-file: MLProject/conda.yaml
           python-version: 3.12.7
+          auto-activate-base: false
 
       - name: Verify environment
+        shell: bash -l {0}
         run: |
           conda info
-          conda list
+          conda list | grep mlflow || echo "MLflow belum terdeteksi!"
 
       - name: Run MLflow Project
+        shell: bash -l {0}   # ini penting agar conda environment aktif
         run: |
+          conda activate telco-churn-env
           cd MLProject
           mlflow run . -P train_path=telco_preprocessing/train.csv -P test_path=telco_preprocessing/test.csv
