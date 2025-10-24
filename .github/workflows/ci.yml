@@ -1,0 +1,32 @@
+name: MLflow CI - Retrain Model
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:  # bisa dijalankan manual dari GitHub Actions tab
+
+jobs:
+  build-train:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Conda environment
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          activate-environment: mlflow-env
+          environment-file: MLProject/conda.yaml
+          python-version: 3.12.7
+
+      - name: Verify environment
+        run: |
+          conda info
+          conda list
+
+      - name: Run MLflow Project
+        run: |
+          cd MLProject
+          mlflow run . -P train_path=telco_preprocessing/train.csv -P test_path=telco_preprocessing/test.csv

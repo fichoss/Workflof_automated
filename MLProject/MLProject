@@ -1,0 +1,10 @@
+name: telco-churn-ml
+
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      train_path: {type: str, default: "telco_preprocessing/train.csv"}
+      test_path: {type: str, default: "telco_preprocessing/test.csv"}
+    command: "python modelling.py --train_path {train_path} --test_path {test_path}"

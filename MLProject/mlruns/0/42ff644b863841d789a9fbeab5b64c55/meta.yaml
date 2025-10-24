@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/LENOVO/Documents/Workflow-CI/MLProject/mlruns/0/42ff644b863841d789a9fbeab5b64c55/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 42ff644b863841d789a9fbeab5b64c55
+run_name: languid-mule-69
+run_uuid: 42ff644b863841d789a9fbeab5b64c55
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1761293171000
+status: 1
+tags: []
+user_id: LENOVO

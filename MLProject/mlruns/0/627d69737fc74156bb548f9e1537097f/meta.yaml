@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/LENOVO/Documents/Workflow-CI/MLProject/mlruns/0/627d69737fc74156bb548f9e1537097f/artifacts
+end_time: 1761295111891
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 627d69737fc74156bb548f9e1537097f
+run_name: intrigued-zebra-324
+run_uuid: 627d69737fc74156bb548f9e1537097f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1761294620162
+status: 3
+tags: []
+user_id: LENOVO
